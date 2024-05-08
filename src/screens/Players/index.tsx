@@ -11,12 +11,15 @@ import { ListEmpty } from "@components/ListEmpty";
 import { Button } from "@components/Button";
 import { useRoute } from "@react-navigation/native";
 
+type RouteParams = {
+    group: string;
+}
 
 export function Players() {
     const [team, setTeam] = useState("Time A");
-    const [players, setPlayers] = useState(["Carlos"])
+    const [players, setPlayers] = useState([])
     const route = useRoute();
-    const { group } = route.params;
+    const { group } = route.params as RouteParams;
 
     return (
         <Container>
@@ -67,14 +70,14 @@ export function Players() {
                 )}
                 ListEmptyComponent={() =>
                     <ListEmpty
-                        message="Não há pessoas nesse time!"
+                      message="Cadastre a primeira turma!"
                     />
-                }
-                showsVerticalScrollIndicator={false}
-                contentContainerStyle={[
-                    { paddingBottom: 100 }, // Quando chegar no ultimo jogar, tem um padding de 100
-                    players.length === 0 && { flex: 1 } // Quando nao tiver jogadores, o ListEmpty ocupa tudo
-                ]}
+                  }
+                  showsVerticalScrollIndicator={false}
+                  contentContainerStyle={[
+                      { paddingBottom: 100 }, // Quando chegar no ultimo jogador, tem um padding de 100
+                      players.length === 0 && { flex: 1 } // Quando nao tiver jogadores, o ListEmpty ocupa tudo
+                  ]}
             />
 
             <Button
