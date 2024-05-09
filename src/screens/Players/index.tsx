@@ -70,14 +70,14 @@ export function Players() {
                 )}
                 ListEmptyComponent={() =>
                     <ListEmpty
-                      message="Cadastre a primeira turma!"
+                        message="Cadastre a primeira turma!"
                     />
-                  }
-                  showsVerticalScrollIndicator={false}
-                  contentContainerStyle={[
-                      { paddingBottom: 100 }, // Quando chegar no ultimo jogador, tem um padding de 100
-                      players.length === 0 && { flex: 1 } // Quando nao tiver jogadores, o ListEmpty ocupa tudo
-                  ]}
+                }
+                showsVerticalScrollIndicator={false}
+                contentContainerStyle={[
+                    { paddingBottom: 100 }, // Quando chegar no ultimo jogador, tem um padding de 100
+                    players.length === 0 && { flex: 1 } // Quando nao tiver jogadores, o ListEmpty ocupa tudo
+                ]}
             />
 
             <Button

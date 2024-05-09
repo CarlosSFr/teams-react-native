@@ -11,7 +11,7 @@ export function NewGroup() {
     const [group, setGroup] = useState("");
 
     function handleNew() {
-        navigation.navigate("players", { group: "Teste" })
+        navigation.navigate("players", { group })
     }
 
     return (
